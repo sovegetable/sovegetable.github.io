@@ -18,6 +18,7 @@
             <guid isPermalink="true">http://yoursite.com/nettest/try1/</guid>
             <title>网络渗透测试实验一</title>
             <link>http://yoursite.com/nettest/try1/</link>
+            <category term="homework" scheme="http://yoursite.com/tags/homework/" />
             <pubDate>Fri, 30 Oct 2020 23:22:00 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note default&#34;&gt;
 &lt;p&gt;渗透测试实验一&lt;/p&gt;
@@ -109,6 +110,129 @@
 &lt;p&gt;&lt;img data-src=&#34;166.png&#34; alt=&#34;avater&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Tom is the killer..         🔪&lt;/p&gt;
 &lt;h3 id=&#34;83-尝试使用数据恢复软件恢复你的u盘中曾经删除的文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#83-尝试使用数据恢复软件恢复你的u盘中曾经删除的文件&#34;&gt;#&lt;/a&gt; 8.3 尝试使用数据恢复软件恢复你的 U 盘中曾经删除的文件。&lt;/h3&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://yoursite.com/Dedecms/</guid>
+            <title>Dedecms漏洞复现</title>
+            <link>http://yoursite.com/Dedecms/</link>
+            <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+            <pubDate>Sat, 24 Oct 2020 18:40:34 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;漏洞说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#漏洞说明&#34;&gt;#&lt;/a&gt; 漏洞说明：&lt;/h2&gt;
+&lt;p&gt;2018 年 1 月 10 日， 锦行信息安全公众号公开了一个关于 DeDeCMS&lt;br&gt;
+ 前台任意用户密码修改漏洞的细节。&lt;br&gt;
+2018 年 1 月 10 日，Seebug 漏洞平台收录该漏洞，漏洞编号为&lt;br&gt;
+ SSV-97074，知道创宇 404 漏洞应急团队成功复现该漏洞。&lt;/p&gt;
+&lt;p&gt;形成原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;由于 php 弱类型比较形成绕过&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;限制：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;只影响前台账户&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只能修改未设置安全问题的账户&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;复现内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复现内容&#34;&gt;#&lt;/a&gt; 复现内容：&lt;/h2&gt;
+&lt;p&gt;1. 首先使用 phpstudy 搭建本地服务并安装织梦 cms&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;在建站是遇到一些问题没有办法访问&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;解决方案：在 [hosts].{label} 中手动添加&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;1.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;2.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;3.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;注册并安装好数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注册并安装好数据库&#34;&gt;#&lt;/a&gt; 注册并安装好数据库&lt;/h4&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;要把会员功能开放并且无密保问题&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img data-src=&#34;4.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;5.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;6.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;开始使用漏洞修改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开始使用漏洞修改&#34;&gt;#&lt;/a&gt; 开始使用漏洞修改&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;7.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;8.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;9.png&#34; alt&gt;&lt;/p&gt;
+&lt;p class=&#34;label warning&#34;&gt;[注意一个账号只能访问改密码页面一次，否则要等 10 分钟 key 失效].&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;10.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;11.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;12.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;13.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;到此漏洞复现成功&lt;/mark&gt;&lt;/p&gt;
+&lt;h2 id=&#34;更改后台admin密码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更改后台admin密码&#34;&gt;#&lt;/a&gt; 更改后台 admin 密码&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;14s.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;15.png&#34; alt&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight diff&#34;&gt;&lt;figcaption data-lang=&#34;diff&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;直接访问该链接，即可重置admin前台为任意密码。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;重置admin前台密码之后，注意不要退出，继续留着cookie，继续进行修改admin后台密码&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;16.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;访问：系统设置 -&amp;gt; 个人资料 -&amp;gt; 基本资料&lt;br&gt;
+即&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://192.168.170.139/member/edit_baseinfo.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;17.png&#34; alt&gt;&lt;/p&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;进行后端密码更改之前，不能纯用 bp 发报文。这样浏览器拿不到重要 cookies 会导致无法依靠 cookie 使 admin 前台登录（登录界面禁用 admin 直接登录）&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NhaXFpaXFpL2FydGljbGUvZGV0YWlscy84Mzk5NjMxMj91dG1fdGVybT1kZWRlY21zJUU2JTk0JUI5JUU1JUFGJTg2JUU3JUEwJTgxJUU2JUJDJThGJUU2JUI0JTlFJUU1JUE0JThEJUU3JThFJUIwJmFtcDt1dG1fbWVkaXVtPWRpc3RyaWJ1dGUud2FwX3NlYXJjaF9yZXN1bHQubm9uZS10YXNrLWJsb2ctMn5hbGx+c29iYWlkdXdlYn5kZWZhdWx0LTEtODM5OTYzMTImYW1wO3NwbT0xMDE4LjIxMTguMzAwMS40MTg3&#34;&gt;网页链接：DeDeCMS v5.7 {SP1,SP2} 密码修改漏洞（附 PoC）&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://yoursite.com/qqshark/</guid>
+            <title>qqshark</title>
+            <link>http://yoursite.com/qqshark/</link>
+            <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+            <pubDate>Sat, 17 Oct 2020 21:36:36 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;qq流量分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#qq流量分析&#34;&gt;#&lt;/a&gt; QQ 流量分析&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;mark&gt;使用工具 ：Wireshark&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;../source/assets/u=3726352782,2540904049&amp;amp;fm=26&amp;amp;gp=0.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;略缩图不见了&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#略缩图不见了&#34;&gt;#&lt;/a&gt; 略缩图不见了！！！&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;1.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;2.png&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;半张图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#半张图&#34;&gt;#&lt;/a&gt; 半张图&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本来是是一张 1.6MB 的完整的图，流量截取后 出现错误&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;3.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;4.png&#34; alt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;尝试了很多次发现只有大图片会发生不完整，推测是分成了两部分或多部分传输&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;hxd的图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hxd的图&#34;&gt;#&lt;/a&gt; hxd 的图&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;意外抓到了别人的图，是因为 wifi 抓包的缘故（无线信号）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;5.png&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;成功的尝试&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成功的尝试&#34;&gt;#&lt;/a&gt; 成功的尝试&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;6.png&#34; alt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入判断条件：tcp and ip.dst==192.168.0.19&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hex 搜索： ffd8&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;7.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;8.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;找到文件拖到本地还原&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;9.png&#34; alt&gt;&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;删除多余的报文 header，还原图片&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img data-src=&#34;10.png&#34; alt&gt;&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;总结&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;抓取文件格式只能是 jpg 格式，png gif pdf doc 文件均加密&lt;/li&gt;
+&lt;li&gt;大小号之间发图片都是加密的（用户和用户通信都加密）&lt;/li&gt;
+&lt;li&gt;大文件会分段传输，大小在 1MB 以下的话方便完整图片&lt;/li&gt;
+&lt;li&gt;wifi 传输并不安全&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
  ]]></description>
         </item>
         <item>
