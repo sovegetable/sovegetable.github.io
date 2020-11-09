@@ -57,6 +57,9 @@
 &lt;p&gt;arpspoof -i 网卡 -t 目标 ip 网关&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h5 id=&#34;23-在互联网上找到任意一个以明文方式传递用户帐号-密码的网站截图wireshark中显示的明文信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#23-在互联网上找到任意一个以明文方式传递用户帐号-密码的网站截图wireshark中显示的明文信息&#34;&gt;#&lt;/a&gt; 2.3 在互联网上找到任意一个以明文方式传递用户帐号、密码的网站，截图 Wireshark 中显示的明文信息。&lt;/h5&gt;
+&lt;p&gt;&lt;img data-src=&#34;17.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;18.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;密码是 base64 加密，相当于～&lt;s&gt; 无&lt;/s&gt;～&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;arp欺骗过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#arp欺骗过程&#34;&gt;#&lt;/a&gt; arp 欺骗过程&lt;/h2&gt;
 &lt;p&gt;环境：两台同网段的虚拟机 kali  &amp;amp;  unbuntu&lt;/p&gt;
