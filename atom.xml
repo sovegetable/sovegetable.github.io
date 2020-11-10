@@ -1,20 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://yoursite.com</id>
+    <id>https://sovegetable.github.io</id>
     <title>心有猛虎  细嗅蔷薇</title>
     <subtitle>In me the tiger sniffs the rose.</subtitle>
-    <icon>http://yoursite.com/images/favicon.ico</icon>
-    <link href="http://yoursite.com" />
+    <icon>https://sovegetable.github.io/images/favicon.ico</icon>
+    <link href="https://sovegetable.github.io" />
     <author>
       <name>给我坐下犬夜叉</name>
     </author>
-    <updated>2020-11-04T10:56:07.000Z</updated>
+    <updated>2020-11-10T12:24:54.000Z</updated>
     <category term="关键词1" />
     <category term="关键词2" />
     <entry>
-        <id>http://yoursite.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
+        <id>https://sovegetable.github.io/tuijian/</id>
+        <title>tuijian</title>
+        <link rel="alternate" href="https://sovegetable.github.io/tuijian/"/>
+        <content type="html">&lt;h2 id=&#34;推荐一下组内成员的博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#推荐一下组内成员的博客&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;rainbow&#34;&gt;推荐一下组内成员的博客&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;组员的Csdnblog&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvd19pYW1mcmVlL2FydGljbGUvZGV0YWlscy8xMDkxMzA5OTc=&#34; data-background-image=&#34;https://profile.csdnimg.cn/8/A/B/3_wow_iamfree&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvd19pYW1mcmVlL2FydGljbGUvZGV0YWlscy8xMDkxMzA5OTc=&#34;&gt;kfew&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;组内成员 实验--easyfilesharing&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;组员的Csdnblog&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvd19pYW1mcmVlL2FydGljbGUvZGV0YWlscy8xMDk0NDExNTQ=&#34; data-background-image=&#34;https://avatar.csdnimg.cn/8/A/B/3_wow_iamfree_1602906513.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvd19pYW1mcmVlL2FydGljbGUvZGV0YWlscy8xMDk0NDExNTQ=&#34;&gt;kfew&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;组内成员 实验——注册机&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</content>
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
+        <updated>2020-11-10T12:24:54.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://sovegetable.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
         <title>数据结构链表的排序实现</title>
-        <link rel="alternate" href="http://yoursite.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
         <content type="html">&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vb25lcGl4ZWwvcC83Njc0NjU5Lmh0bWw=&#34;&gt;链接：十大经典排序算法（动画演示）&lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;冒泡排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#冒泡排序&#34;&gt;#&lt;/a&gt; 冒泡排序&lt;/h2&gt;
@@ -26,13 +44,13 @@
 &lt;hr&gt;
 &lt;p&gt;挖个坑... 未完待续...&lt;/p&gt;
 </content>
-        <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+        <category term="数据结构" scheme="https://sovegetable.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
         <updated>2020-11-04T10:56:07.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/test2/</id>
+        <id>https://sovegetable.github.io/test2/</id>
         <title>网络渗透实验二</title>
-        <link rel="alternate" href="http://yoursite.com/test2/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/test2/"/>
         <content type="html">&lt;h2 id=&#34;1-a主机上外网b运行sinfferwireshark选定只抓源为a的数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-a主机上外网b运行sinfferwireshark选定只抓源为a的数据&#34;&gt;#&lt;/a&gt; 1、A 主机上外网，B 运行 sinffer (Wireshark) 选定只抓源为 A 的数据)。&lt;/h2&gt;
 &lt;h5 id=&#34;11-写出以上过滤语句&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-写出以上过滤语句&#34;&gt;#&lt;/a&gt; 1.1 写出以上过滤语句。&lt;/h5&gt;
 &lt;blockquote&gt;
@@ -148,13 +166,13 @@
 &lt;p&gt;安全路上上道阻且长，加油吧骚年！&lt;/p&gt;
 &lt;hr&gt;
 </content>
-        <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
         <updated>2020-11-03T15:47:15.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/nettest/try1/</id>
+        <id>https://sovegetable.github.io/nettest/try1/</id>
         <title>网络渗透测试实验一</title>
-        <link rel="alternate" href="http://yoursite.com/nettest/try1/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/nettest/try1/"/>
         <content type="html">&lt;div class=&#34;note default&#34;&gt;
 &lt;p&gt;渗透测试实验一&lt;/p&gt;
 &lt;/div&gt;
@@ -255,13 +273,13 @@
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC85NzU3MDcxMg==&#34;&gt;知乎：数据恢复原理&lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 </content>
-        <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
         <updated>2020-10-30T15:22:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/Dedecms/</id>
+        <id>https://sovegetable.github.io/Dedecms/</id>
         <title>Dedecms漏洞复现</title>
-        <link rel="alternate" href="http://yoursite.com/Dedecms/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/Dedecms/"/>
         <content type="html">&lt;h2 id=&#34;漏洞说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#漏洞说明&#34;&gt;#&lt;/a&gt; 漏洞说明：&lt;/h2&gt;
 &lt;p&gt;2018 年 1 月 10 日， 锦行信息安全公众号公开了一个关于 DeDeCMS&lt;br&gt;
  前台任意用户密码修改漏洞的细节。&lt;br&gt;
@@ -322,13 +340,13 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NhaXFpaXFpL2FydGljbGUvZGV0YWlscy84Mzk5NjMxMj91dG1fdGVybT1kZWRlY21zJUU2JTk0JUI5JUU1JUFGJTg2JUU3JUEwJTgxJUU2JUJDJThGJUU2JUI0JTlFJUU1JUE0JThEJUU3JThFJUIwJmFtcDt1dG1fbWVkaXVtPWRpc3RyaWJ1dGUud2FwX3NlYXJjaF9yZXN1bHQubm9uZS10YXNrLWJsb2ctMn5hbGx+c29iYWlkdXdlYn5kZWZhdWx0LTEtODM5OTYzMTImYW1wO3NwbT0xMDE4LjIxMTguMzAwMS40MTg3&#34;&gt;网页链接：DeDeCMS v5.7 {SP1,SP2} 密码修改漏洞（附 PoC）&lt;/span&gt;&lt;/p&gt;
 </content>
-        <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
         <updated>2020-10-24T10:40:34.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/qqshark/</id>
+        <id>https://sovegetable.github.io/qqshark/</id>
         <title>qq流量包分析</title>
-        <link rel="alternate" href="http://yoursite.com/qqshark/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/qqshark/"/>
         <content type="html">&lt;h2 id=&#34;qq流量分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#qq流量分析&#34;&gt;#&lt;/a&gt; QQ 流量分析&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;mark&gt;使用工具 ：Wireshark&lt;/mark&gt;&lt;/p&gt;
@@ -378,13 +396,13 @@
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="homework" scheme="http://yoursite.com/tags/homework/" />
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
         <updated>2020-10-17T13:36:36.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/sqlilabs%201~6/</id>
+        <id>https://sovegetable.github.io/sqlilabs%201~6/</id>
         <title>sqlilabs payload</title>
-        <link rel="alternate" href="http://yoursite.com/sqlilabs%201~6/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/sqlilabs%201~6/"/>
         <content type="html">&lt;h1 id=&#34;less-1~4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#less-1~4&#34;&gt;#&lt;/a&gt; less 1~4&lt;/h1&gt;
 &lt;p&gt;select TABLE_NAME from information_schema.TABLES where TABLE_SCHEMA=&#39; 库名 &#39; LIMIT 0,1  // 爆表（一次一个）&lt;/p&gt;
 &lt;p&gt;select group_concat (table_name) from information_schema.tables where table_schema=0x7365637572697479 // 爆表 （全部）前面是数据库 16 进制的编码&lt;/p&gt;
@@ -404,9 +422,9 @@
         <updated>2020-08-17T11:51:14.287Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</id>
+        <id>https://sovegetable.github.io/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</id>
         <title>What is OSI七层协议</title>
-        <link rel="alternate" href="http://yoursite.com/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
         <content type="html">&lt;h1 id=&#34;osi七层协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#osi七层协议&#34;&gt;#&lt;/a&gt; OSI 七层协议&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWctbXkuY3Nkbi5uZXQvdXBsb2Fkcy8yMDEyMDEvNS8wXzEzMjU3NDQ1OTdXTTMyLmdpZg==&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第一层物理层&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一层物理层&#34;&gt;#&lt;/a&gt; 第一层：物理层&lt;/h2&gt;
@@ -451,9 +469,9 @@
         <updated>2020-08-12T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/uploadlabs/</id>
+        <id>https://sovegetable.github.io/uploadlabs/</id>
         <title>uploadlabs解析</title>
-        <link rel="alternate" href="http://yoursite.com/uploadlabs/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/uploadlabs/"/>
         <content type="html">&lt;p&gt;第一关：&lt;br&gt;
 前端 js 函数白名单过滤&lt;br&gt;
 方法 1：BP 抓包改文件，先把 php 后缀改成白名单里的，然后抓包在改回来绕过前端&lt;br&gt;
@@ -478,9 +496,9 @@ SetHandler application/x-httpd-php&lt;br&gt;
         <updated>2020-08-10T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://yoursite.com/hello-world/</id>
+        <id>https://sovegetable.github.io/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="http://yoursite.com/hello-world/"/>
+        <link rel="alternate" href="https://sovegetable.github.io/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3plc3BpYS50dy9oZXhv&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3plc3BpYS50dy9oZXhvL2RvY3M=&#34;&gt;documentation&lt;/span&gt; to learn how to use.&lt;/p&gt;
 </content>
         <updated>2013-12-24T09:49:32.000Z</updated>
