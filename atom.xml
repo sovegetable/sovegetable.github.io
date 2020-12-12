@@ -8,14 +8,82 @@
     <author>
       <name>给我坐下犬夜叉</name>
     </author>
-    <updated>2020-11-22T08:28:18.000Z</updated>
+    <updated>2020-12-08T03:35:40.000Z</updated>
     <category term="关键词1" />
     <category term="关键词2" />
+    <entry>
+        <id>https://sovegetable.github.io/test4/</id>
+        <title>网络渗透测试实验四</title>
+        <link rel="alternate" href="https://sovegetable.github.io/test4/"/>
+        <content type="html">&lt;h1 id=&#34;web-developer靶机渗透&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web-developer靶机渗透&#34;&gt;#&lt;/a&gt; Web Developer 靶机渗透&lt;/h1&gt;
+&lt;p&gt;目的：获取靶机 Web Developer 文件 /root/flag.txt 中 flag。&lt;/p&gt;
+&lt;h2 id=&#34;1-发现目标-netdiscover找到webdeveloper的ip地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-发现目标-netdiscover找到webdeveloper的ip地址&#34;&gt;#&lt;/a&gt; 1、发现目标 (netdiscover)，找到 WebDeveloper 的 IP 地址。&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;1.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2nmap扫描靶机开放端口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2nmap扫描靶机开放端口&#34;&gt;#&lt;/a&gt; 2.nmap 扫描靶机开放端口&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;2.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3发现http服务并查看&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3发现http服务并查看&#34;&gt;#&lt;/a&gt; 3. 发现 http 服务并查看&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;3.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;4.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;发现是使用 WordPress 搭建的网站，尝试寻找登录后台.&lt;/p&gt;
+&lt;h2 id=&#34;4目录扫描&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4目录扫描&#34;&gt;#&lt;/a&gt; 4. 目录扫描&lt;/h2&gt;
+&lt;p&gt;利用 wpscan 扫描&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;WPScan&lt;/code&gt;  是一个扫描  &lt;code&gt;WordPress&lt;/code&gt;  漏洞的黑盒子扫描器，它可以为所有  &lt;code&gt;Web&lt;/code&gt;  开发人员扫描  &lt;code&gt;WordPress&lt;/code&gt;  漏洞并在他们开发前找到并解决问题。我们还使用了  &lt;code&gt;Nikto&lt;/code&gt;  ，它是一款非常棒的 &lt;code&gt;Web&lt;/code&gt;  服务器评估工具，我们认为这个工具应该成为所有针对  &lt;code&gt;WordPress&lt;/code&gt;  网站进行的渗透测试的一部分&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;6.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;发现 upload 目录，可能存在文件上传漏洞&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;7.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;发现后台可以尝试弱口令爆破&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;8.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;发现可以流量包文件，下载并分析&lt;/p&gt;
+&lt;h2 id=&#34;5流量包分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5流量包分析&#34;&gt;#&lt;/a&gt; 5. 流量包分析&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;9.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;利用过滤发现存在明文传输信息，发现是 wp 后台登录账号密码&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;10.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;成功登录&lt;/p&gt;
+&lt;h2 id=&#34;6wordpress插件漏洞利用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6wordpress插件漏洞利用&#34;&gt;#&lt;/a&gt; 6.WordPress 插件漏洞利用&lt;/h2&gt;
+&lt;p&gt;在 msf 搜索可用 payload&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;12.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;该漏洞需要配合 reflex gallery 插件使用，使用需要在管理员后台安装插件&lt;/p&gt;
+&lt;p&gt;版本在 3.14 之前才行！&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;13.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;漏洞脚本弹回了 shell, 尝试获取敏感信息&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;14.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;访问 wp-config 配置文件找到 mysql 的账号密码，尝试使用登录.&lt;/p&gt;
+&lt;h2 id=&#34;7尝试ssh登录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7尝试ssh登录&#34;&gt;#&lt;/a&gt; 7. 尝试 ssh 登录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;ssh *username@*ip&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;16.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;8用户提权&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#8用户提权&#34;&gt;#&lt;/a&gt; 8. 用户提权&lt;/h2&gt;
+&lt;p&gt;查看权限是 webdeveloper 用户&lt;/p&gt;
+&lt;p&gt;无法 cat 到 root 目录&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;20.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;sudo -l 查看当前用户可以使用的 root 权限指令&lt;/p&gt;
+&lt;p&gt;发现有 tcpdump, 尝试提权&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;touch /tmp/exploit1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写入 shellcode&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;cat /root/flag.txt&#39; &amp;gt; /tmp/exploit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;赋予可执行权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x /tmp/exploit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;利用 tcpdump 执行任意命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo tcpdump -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/exploit -Z root
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;获得 flag&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;21.png&#34; alt&gt;&lt;/p&gt;
+</content>
+        <category term="homework" scheme="https://sovegetable.github.io/tags/homework/" />
+        <updated>2020-12-08T03:35:40.000Z</updated>
+    </entry>
     <entry>
         <id>https://sovegetable.github.io/test3/</id>
         <title>网络渗透测试实验三</title>
         <link rel="alternate" href="https://sovegetable.github.io/test3/"/>
-        <content type="html">&lt;h1 id=&#34;xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;XSS&lt;strong&gt;&lt;strong&gt; 部分：利用&lt;/strong&gt;&lt;/strong&gt; Beef**** 劫持被攻击者客户端浏览器。&lt;/strong&gt;&lt;/h1&gt;
+        <content type="html">&lt;h1 id=&#34;网络渗透测试实验三&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网络渗透测试实验三&#34;&gt;#&lt;/a&gt; &lt;strong&gt;网络渗透测试实验三&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xss部分利用beef劫持被攻击者客户端浏览器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;XSS&lt;strong&gt;&lt;strong&gt; 部分：利用&lt;/strong&gt;&lt;/strong&gt; Beef**** 劫持被攻击者客户端浏览器。&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&#34;kbd&#34;&gt;实验环境：存在 xss 漏洞的留言板，IIS 虚拟机，Kali&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-利用awvs扫描留言簿网站发现其存在xss漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-利用awvs扫描留言簿网站发现其存在xss漏洞&#34;&gt;#&lt;/a&gt; 1、利用 AWVS 扫描留言簿网站，发现其存在 XSS 漏洞。&lt;/h2&gt;
 &lt;p&gt;&lt;img data-src=&#34;1.png&#34; alt&gt;&lt;/p&gt;
